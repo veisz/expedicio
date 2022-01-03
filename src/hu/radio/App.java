@@ -7,6 +7,7 @@ import hu.radio.domain.service.DataParser;
 import hu.radio.domain.service.FileReader;
 
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class App {
@@ -16,7 +17,7 @@ public class App {
     private final MessageService messageService;
 
 
-    private App() {
+    private App() throws IOException {
         console = new Console(new Scanner(System.in));
         fileWriter = new FileWriter("adaas.txt");
         DataApi dataApi = new DataApi(new FileReader(), new DataParser());
@@ -24,7 +25,7 @@ public class App {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         new App().run();
     }
 
