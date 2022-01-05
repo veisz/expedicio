@@ -22,4 +22,8 @@ public class RadioMessage {
     public String getMessage() {
         return message;
     }
+
+    public boolean contains(String text) {
+        return message.contains(text);
+    }
 }
